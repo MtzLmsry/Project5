@@ -86,22 +86,24 @@ void init() {
     GLfloat amb[] = { 0.2f,0.2f,0.2f,1 };
     glLightModelfv(GL_LIGHT_MODEL_AMBIENT, amb);
 
-    // أقسام (أرضية)
-    sections.push_back(Section(-4, -4));
-    sections.push_back(Section(4, -4));
-    sections.push_back(Section(-4, 4));
-    sections.push_back(Section(4, 4));
+    // الأرضية
+    sections.push_back(Section(-22, -22));
+    sections.push_back(Section(22, -22));
+    sections.push_back(Section(-22, 22));
+    sections.push_back(Section(22, 22));
 
-    columns.push_back(Column(-14, -14));
-    columns.push_back(Column(14, -14));
-    columns.push_back(Column(-14, 14));
-    columns.push_back(Column(14, 14));
+    columns.push_back(Column(-20, -20));
+    columns.push_back(Column(20, -20));
+    columns.push_back(Column(-20, 20));
+    columns.push_back(Column(20, 20));
 
-    // الجدران الأربعة
-    walls.push_back(GlassWall(-15, -15, 15, -15, false)); // أمامي
-    walls.push_back(GlassWall(-15, 15, 15, 15, false)); // خلفي
-    walls.push_back(GlassWall(-15, -15, -15, 15, true)); // يسار
-    walls.push_back(GlassWall(15, -15, 15, 15, true)); // يمين
+    // الجدران 
+    walls.push_back(GlassWall(-34.0f, 0.0f, -43.0f, 18.0f, 15.7f, false)); // أمامي
+    walls.push_back(GlassWall(-34.0f, 0.0f, 43.0f, 18.0f, 15.7f, false)); // خلفي
+    walls.push_back(GlassWall(34.0f, 0.0f, 43.0f, 14.0f, 15.7f, false)); //2 خلفي
+    walls.push_back(GlassWall(25.0f, 6.0f, 43.0f, 8.0f, 9.7f, false)); //2 خلفي فوقاني
+    walls.push_back(GlassWall(-43.0f, 0.0f, -31.13f, -30.0f, 15.7f, true)); // يسار
+    walls.push_back(GlassWall(43.0f, 0.0f, -31.13f, 19.0f, 15.7f, true)); // يمين
 }
 
 void reshape(int w, int h)

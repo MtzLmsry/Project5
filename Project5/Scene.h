@@ -27,10 +27,10 @@ class Scene
 	};
 
 	GlassWall glasswall[4] = {
-		GlassWall(0, -10, 20, 4, false), // √„«„
-		GlassWall(0,  10, 20, 4, false), // Œ·›
-		GlassWall(-10, 0, 20, 4, true),  // Ì”«—
-		GlassWall(10,  0, 20, 4, true),  // Ì„Ì‰
+		GlassWall(0, 0, -10, 20, 4, false), // √„«„
+		GlassWall(0, 0, 10, 20, 4, false), // Œ·›
+		GlassWall(-10, 0, 0, 20, 4, true),  // Ì”«—
+		GlassWall(10, 0, 0, 20, 4, true),  // Ì„Ì‰
 	};
 };
 

@@ -4,11 +4,11 @@
 
 class GlassWall {
 public:
-    float x, z, w, h;
+    float x, y, z, w, h ;
     bool vertical;
 
-    GlassWall(float _x, float _z, float _w, float _h, bool _v)
-        : x(_x), z(_z), w(_w), h(_h), vertical(_v) {}
+    GlassWall(float _x, float _y, float _z, float _w, float _h, bool _v)
+        : x(_x), y(_y),  z(_z), w(_w), h(_h), vertical(_v) {}
 
     void draw() {
         glEnable(GL_BLEND);
@@ -19,18 +19,18 @@ public:
 
         glBegin(GL_QUADS);
         if (!vertical) {
-            // √„«„Ì / Œ·›Ì
-            glVertex3f(x - w / 2, 0, z);
-            glVertex3f(x + w / 2, 0, z);
-            glVertex3f(x + w / 2, h, z);
-            glVertex3f(x - w / 2, h, z);
+            // front or back wall
+            glVertex3f(x - w / 2, y, z);
+            glVertex3f(x + w / 2, y, z);
+            glVertex3f(x + w / 2, y + h, z);
+            glVertex3f(x - w / 2, y + h, z);
         }
         else {
-            // Ì„Ì‰ / Ì”«—
-            glVertex3f(x, 0, z - w / 2);
-            glVertex3f(x, 0, z + w / 2);
-            glVertex3f(x, h, z + w / 2);
-            glVertex3f(x, h, z - w / 2);
+            // left or right wall
+            glVertex3f(x, y, z - w / 2);
+            glVertex3f(x, y, z + w / 2);
+            glVertex3f(x, y + h, z + w / 2);
+            glVertex3f(x, y + h, z - w / 2);
         }
         glEnd();
 
